@@ -43,3 +43,5 @@ fabric.properties
 game_core/__pycache__/
 menu/__pycache__/
 libs/pyIgnition/__pycache__/
+
+.venv/

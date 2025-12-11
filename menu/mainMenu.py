@@ -111,18 +111,6 @@ def start_game():
     GameManager(constants.players_number, constants.tanks_number).run()
 
 
-def draw_black_screen_effect():
-    """
-    Draw black screen effect
-    :return: none
-    """
-    effect_filter = pygame.surface.Surface((constants.display_width, constants.display_height))
-    effect_filter.fill(pygame.color.Color('White'))
-    effect_filter.blit(light, tuple(map(lambda x: x - 150, pygame.mouse.get_pos())))
-    screen.blit(effect_filter, (0, 0), special_flags=pygame.BLEND_RGBA_SUB)
-    pygame.display.flip()
-
-
 def init_menu():
     """
     Initializes menu of the game
@@ -214,9 +202,5 @@ def init_menu():
                 option.hovered = False
                 option.set_rend()
             screen.blit(option.rend, option.rect)
-
-        # draw effect
-        if not is_effect(pygame.mixer.music.get_pos()):
-            draw_black_screen_effect()
 
         pygame.display.update()
