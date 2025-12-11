@@ -88,6 +88,12 @@ class Ground:
             elif isinstance(intersection, Point):
                 if not explosion_circle.contains(intersection):
                     self.points[i][1] = int(intersection.coords[0][1])
+                else:
+                    left_length = explosion_point[1] - explosion_radius - self.points[i][1]
+                    if left_length > 0:
+                        left_ground.append([[i, self.points[i][1] + explosion_radius], [i, self.points[i][1]]])
+                    
+                    self.points[i][1] = min(self.points[i][1] + explosion_radius, display_height)
 
         return left_ground
 
