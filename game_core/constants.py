@@ -59,3 +59,10 @@ class FontSize(Enum):
     SMALL = 1
     MEDIUM = 2
     LARGE = 3
+
+
+# MIRV values
+mirv_split_count = 4
+mirv_child_power_ratio = 0.25
+mirv_shell_radius = int(simple_shell_radius * 0.75)
+mirv_angle_offsets = (-0.35, -0.12, 0.12, 0.35)
